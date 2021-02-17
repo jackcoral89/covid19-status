@@ -1,3 +1,11 @@
+<p-menubar [model]="menuItems">
+  <ng-template pTemplate="start">
+    <a href="/">
+      <img src="assets/img/covid-19.png" height="40" class="p-mr-2">
+    </a>
+  </ng-template>
+</p-menubar>
+
 <p-table
   #dt
   [value]="globalCovidData"
