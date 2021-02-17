@@ -1,1 +1,64 @@
-<p>home works!</p>
+
+<p-table
+#dt
+[value]="globalCovidData"
+dataKey="countryInfo._id" 
+styleClass="p-datatable-countries"
+[rowHover]="true" 
+[rows]="10" 
+[showCurrentPageReport]="true" 
+[rowsPerPageOptions]="[10,25,50]" 
+[loading]="loading"
+[paginator]="true" 
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
+[globalFilterFields]="['name','country']"
+>
+
+<ng-template pTemplate="caption">
+	<div class="table-header p-d-flex p-jc-between p-ai-center">
+		<h2>List of Countries</h2>
+		<span class="p-input-icon-left">
+			<i class="pi pi-search"></i>
+			<input pInputText type="text" (input)="dt.filterGlobal($event.target, 'contains')" placeholder="Global Search" />
+		</span>
+	</div>
+</ng-template>
+
+<ng-template pTemplate="header">
+	<tr>
+		<th pSortableColumn="country">Country <p-sortIcon field="country"></p-sortIcon></th>
+		<th pSortableColumn="population">Population <p-sortIcon field="population"></p-sortIcon></th>
+		<th pSortableColumn="cases">Cases <p-sortIcon field="cases"></p-sortIcon></th>
+		<th pSortableColumn="recovered">Recovered <p-sortIcon field="recovered"></p-sortIcon></th>
+		<th pSortableColumn="deaths">Deaths <p-sortIcon field="deaths"></p-sortIcon></th>
+		<th pSortableColumn="critical">Critical <p-sortIcon field="critical"></p-sortIcon></th>
+		<th></th>
+	</tr>
+</ng-template>
+
+<ng-template pTemplate="body" let-globalCovidData>
+	<tr class="p-selectable-row">
+		<td>
+			<span class="p-column-title">
+				<img class="flag" [src]="globalCovidData.countryInfo.flag" width="30">
+				{{globalCovidData.country}}
+			</span>
+		</td>
+		<td><span class="p-column-title">{{globalCovidData.population}}</span></td>
+		<td><span class="p-column-title">{{globalCovidData.cases}}</span></td>
+		<td><span class="p-column-title">{{globalCovidData.recovered}}</span></td>
+		<td><span class="p-column-title">{{globalCovidData.deaths}}</span></td>
+		<td>
+			<p-badge value="{{globalCovidData.critical}}" severity="{{globalCovidData.critical > 0 ? 'danger' : 'success'}}" size="large"></p-badge>
+		</td>
+		<td style="text-align: center;"><button pButton type="button" class="p-button-secondary" icon="pi pi-cog"></button></td>
+	</tr>
+</ng-template>
+
+<ng-template pTemplate="emptymessage">
+	<tr>
+		<td colspan="8">No country found</td>
+	</tr>
+</ng-template>
+
+</p-table>

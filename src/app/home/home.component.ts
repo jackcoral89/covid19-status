@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ApiService } from 'src/services/api.service';
+import { GlobalCovidData } from 'src/models/global-covid-data.model';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('dt') table: Table;
+
+  public globalCovidData: GlobalCovidData[];
+  public loading: boolean = true;
+
+  constructor(public apiService: ApiService) { }
 
   ngOnInit(): void {
-
+    this.apiService.getCovidData().subscribe((response) => {
+      this.globalCovidData = response;
+      this.loading = false;
+    });
   }
 
 }
