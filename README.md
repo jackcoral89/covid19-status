@@ -1,5 +1,7 @@
 # COVID-19 (SARS-CoV-2) - Pandemic Situation Around the World
 
+Referral link: https://covid19-status.giacomocorallini.com
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
 ## Development server
