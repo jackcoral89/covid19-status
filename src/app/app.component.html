@@ -32,48 +32,8 @@
       <th pSortableColumn="recovered">Recovered <p-sortIcon field="recovered"></p-sortIcon></th>
       <th pSortableColumn="deaths">Deaths <p-sortIcon field="deaths"></p-sortIcon></th>
       <th pSortableColumn="critical">Critical <p-sortIcon field="critical"></p-sortIcon></th>
-      <!-- <th pSortableColumn="representative.name">Representative <p-sortIcon field="representative.name"></p-sortIcon></th> -->
-      <!-- <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th> -->
-      <!-- <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th> -->
-      <!-- <th pSortableColumn="activity">Activity <p-sortIcon field="activity"></p-sortIcon></th> -->
       <th></th>
     </tr>
-    <!-- <tr>
-      <th><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
-      <th>
-        <input pInputText type="text" (input)="dt.filter($event.target.value, 'country', 'startsWith')" placeholder="Search by Country" class="p-column-filter">
-      </th>
-      <th>
-        <input pInputText type="text" (input)="dt.filter($event.target.value, 'country.name', 'contains')" placeholder="Search by Country" class="p-column-filter">
-      </th>
-      <th>
-        <p-multiSelect [options]="representatives" placeholder="All" (onChange)="onRepresentativeChange($event)"
-          styleClass="p-column-filter" optionLabel="name">
-          <ng-template let-option pTemplate="item">
-            <div class="p-multiselect-representative-option">
-              <span class="p-ml-1">{{option.label}}</span>
-            </div>
-          </ng-template>
-        </p-multiSelect>
-      </th>
-      <th>
-        <p-calendar (onSelect)="onDateSelect($event)" (onClearClick)="dt.filter('', 'date', 'equals')"
-          [showButtonBar]="true" styleClass="p-column-filter" placeholder="Registration Date" [readonlyInput]="true"
-          dateFormat="yy-mm-dd"></p-calendar>
-      </th>
-      <th>
-        <p-dropdown [options]="statuses" (onChange)="dt.filter($event.value, 'status', 'equals')"
-          styleClass="p-column-filter" placeholder="Select a Status" [showClear]="true">
-          <ng-template let-option pTemplate="item">
-            <span [class]="'customer-badge status-' + option.value">&#123;&#123;option.label&#125;&#125;</span>
-          </ng-template>
-        </p-dropdown>
-      </th>
-      <th>
-        <input pInputText type="text" (input)="onActivityChange($event)" placeholder="Minimum" class="p-column-filter">
-      </th>
-      <th></th>
-    </tr> -->
   </ng-template>
 
   <ng-template pTemplate="body" let-globalCovidData>
@@ -88,11 +48,9 @@
       <td><span class="p-column-title">{{globalCovidData.cases}}</span></td>
       <td><span class="p-column-title">{{globalCovidData.recovered}}</span></td>
       <td><span class="p-column-title">{{globalCovidData.deaths}}</span></td>
-      <td><span class="p-column-title">{{globalCovidData.critical}}</span></td>
-      <!-- <td>
-        <span class="p-column-title">Status</span>
-        <span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
-      </td> -->
+      <td>
+        <p-badge value="{{globalCovidData.critical}}" severity="{{globalCovidData.critical > 0 ? 'danger' : 'success'}}" size="large"></p-badge>
+      </td>
       <td style="text-align: center;"><button pButton type="button" class="p-button-secondary" icon="pi pi-cog"></button></td>
     </tr>
   </ng-template>
