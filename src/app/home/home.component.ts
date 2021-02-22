@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/services/api.service';
 import { Covid19All, GlobalCovidData } from 'src/models/global-covid-data.model';
 import { Table } from 'primeng/table';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,10 @@ export class HomeComponent implements OnInit {
   public covid19All: Covid19All;
   public loading: boolean = true;
 
-  constructor(public apiService: ApiService) { }
+  constructor(
+    public apiService: ApiService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getCovidData();
@@ -39,6 +43,14 @@ export class HomeComponent implements OnInit {
     this.apiService.getCovid19All().subscribe((response) => {
       this.covid19All = response;
     });
+  }
+
+  public countryDetail(countryName: string) {
+    if (countryName == 'Italy') {
+      this.router.navigate(['/italy']);
+    } else {
+      this.router.navigate(['/country-detail', countryName]);
+    }
   }
 
 }

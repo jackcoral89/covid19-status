@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MenuItem, PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -21,7 +20,7 @@ export class AppComponent implements OnInit {
     this.menuItems = [
       {
         label: 'Home',
-        routerLink: '/home',
+        routerLink: '/',
         icon: 'pi pi-fw pi-home' 
       },
       {

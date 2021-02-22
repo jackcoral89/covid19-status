@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/services/api.service';
 
 @Component({
   selector: 'app-italy',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItalyComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public apiService: ApiService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public getCountryDetail() {
+    // this.apiService.getCountryDetail().subscribe((response) => {
+    //   this.covid19All = response;
+    // });
   }
 
 }

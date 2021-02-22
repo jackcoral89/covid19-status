@@ -15,12 +15,14 @@ import { HomeComponent } from './home/home.component';
 import { ItalyComponent } from './italy/italy.component';
 import { FormsModule } from '@angular/forms';
 import { CardModule, } from 'primeng/card';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ItalyComponent
+    ItalyComponent,
+    CountryDetailComponent
   ],
   imports: [
     BrowserModule,
