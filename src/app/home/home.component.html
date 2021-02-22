@@ -11,7 +11,7 @@
 		<p-card class="custom-card">
 			<p-skeleton width="40%" height="1rem" *ngIf="loading"></p-skeleton>
 			<p-skeleton styleClass="p-mt-4" width="80%" height="4rem" *ngIf="loading"></p-skeleton>
-			<h1 class="p-mt-0" *ngIf="!loading">Global cases</h1>
+			<h1 class="p-mt-0" *ngIf="!loading">Cases</h1>
 			<span class="number-of-cases color-danger" *ngIf="!loading">{{covid19All.cases | number}}</span>
 		</p-card>
 	</div>
@@ -19,7 +19,7 @@
 		<p-card class="custom-card">
 			<p-skeleton width="40%" height="1rem" *ngIf="loading"></p-skeleton>
 			<p-skeleton styleClass="p-mt-4" width="80%" height="4rem" *ngIf="loading"></p-skeleton>
-			<h1 class="p-mt-0">Global recovered</h1>
+			<h1 class="p-mt-0">Recovered</h1>
 			<span class="number-of-cases color-success" *ngIf="!loading">{{covid19All.recovered | number}}</span>
 		</p-card>
 	</div>
@@ -27,7 +27,7 @@
 		<p-card class="custom-card">
 			<p-skeleton width="40%" height="1rem" *ngIf="loading"></p-skeleton>
 			<p-skeleton styleClass="p-mt-4" width="80%" height="4rem" *ngIf="loading"></p-skeleton>
-			<h1 class="p-mt-0" *ngIf="!loading">Global deaths</h1>
+			<h1 class="p-mt-0" *ngIf="!loading">Deaths</h1>
 			<span class="number-of-cases color-2" *ngIf="!loading">{{covid19All.deaths | number}}</span>
 		</p-card>
 	</div>
