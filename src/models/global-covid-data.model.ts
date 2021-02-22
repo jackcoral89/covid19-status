@@ -54,4 +54,4 @@ export class Covid19All {
 	public recoveredPerOneMillion: number = 0;
 	public criticalPerOneMillion: number = 0;
 	public affectedCountries: number = 0;
-} 
+}

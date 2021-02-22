@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  BASE_URL: 'https://disease.sh/',
-  API_URL: 'https://corona.lmao.ninja/v2/countries/'  
+  API_URL: 'https://disease.sh/'
 };
 
 /*
