@@ -19,7 +19,7 @@
 		<p-card class="custom-card">
 			<p-skeleton width="40%" height="1rem" *ngIf="loading"></p-skeleton>
 			<p-skeleton styleClass="p-mt-4" width="80%" height="4rem" *ngIf="loading"></p-skeleton>
-			<h1 class="p-mt-0">Recovered</h1>
+			<h1 class="p-mt-0" *ngIf="!loading">Recovered</h1>
 			<span class="number-of-cases color-success" *ngIf="!loading">{{covid19All.recovered | number}}</span>
 		</p-card>
 	</div>
@@ -55,6 +55,8 @@
 					</th>
 					<th pSortableColumn="population">Population <p-sortIcon field="population"></p-sortIcon>
 					</th>
+					<th pSortableColumn="tests">Tests <p-sortIcon field="tests"></p-sortIcon>
+					</th>
 					<th pSortableColumn="cases">Cases <p-sortIcon field="cases"></p-sortIcon>
 					</th>
 					<th pSortableColumn="recovered">Recovered <p-sortIcon field="recovered"></p-sortIcon>
@@ -63,12 +65,11 @@
 					</th>
 					<th pSortableColumn="critical">Critical <p-sortIcon field="critical"></p-sortIcon>
 					</th>
-					<th></th>
 				</tr>
 			</ng-template>
 
 			<ng-template pTemplate="body" let-globalCovidData>
-				<tr class="p-selectable-row">
+				<tr class="p-selectable-row" (click)="countryDetail(globalCovidData.country)">
 					<td>
 						<span class="p-column-title p-d-flex p-ai-center">
 							<img class="flag" [src]="globalCovidData.countryInfo.flag" width="30">
@@ -76,15 +77,13 @@
 						</span>
 					</td>
 					<td><span class="p-column-title">{{globalCovidData.population | number}}</span></td>
+					<td><span class="p-column-title">{{globalCovidData.tests | number}}</span></td>
 					<td><span class="p-column-title">{{globalCovidData.cases | number}}</span></td>
 					<td><span class="p-column-title">{{globalCovidData.recovered | number}}</span></td>
 					<td><span class="p-column-title">{{globalCovidData.deaths | number}}</span></td>
 					<td>
 						<p-badge value="{{globalCovidData.critical | number}}"
 							severity="{{globalCovidData.critical > 0 ? 'danger' : 'success'}}" size="large"></p-badge>
-					</td>
-					<td style="text-align: center;">
-						<button pButton type="button" class="p-button-primary" icon="pi pi-cog" (click)="countryDetail(globalCovidData.country)"></button>
 					</td>
 				</tr>
 			</ng-template>
