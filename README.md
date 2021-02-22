@@ -2,6 +2,7 @@
 
 # COVID-19 (SARS-CoV-2) - Pandemic Situation Around the World 🦠 😷
 [![angular](https://aleen42.github.io/badges/src/angular.svg)](https://aleen42.github.io/badges/src/angular.svg) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 In this project you will find an updated dashboard with the current status of **COVID-19** around the world. It is an experimental and personal project, with the aim of testing some libraries based on Angular. The technologies used are as follows:
 
 - [Angular](https://angular.io/)
