@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ItalyComponent } from './italy/italy.component';
 import { FormsModule } from '@angular/forms';
-
+import { CardModule, } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     BadgeModule,
     MenubarModule,
-    FormsModule
+    FormsModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

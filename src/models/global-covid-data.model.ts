@@ -32,3 +32,26 @@ export class CountryInfo {
 	public long: number = 0;
 	public flag: string = '';
 }
+
+export class Covid19All {
+	public updated: number = 0;
+	public cases: number = 0;
+	public todayCases: number = 0;
+	public deaths: number = 0;
+	public recovered: number = 0;
+	public todayRecovered: number = 0;
+	public active: number = 0;
+	public critical: number = 0;
+	public casesPerOneMillion: number = 0;
+	public deathsPerOneMillion: number = 0;
+	public tests: number = 0;
+	public testsPerOneMillion: number = 0;
+	public population: number = 0;
+	public oneCasePerPeople: number = 0;
+	public oneDeathPerPeople: number = 0;
+	public oneTestPerPeople: number = 0;
+	public activePerOneMillion: number = 0;
+	public recoveredPerOneMillion: number = 0;
+	public criticalPerOneMillion: number = 0;
+	public affectedCountries: number = 0;
+} 
