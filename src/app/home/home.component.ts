@@ -24,4 +24,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  filterGlobal(event: any) {
+    const value = event.target.value;
+    this.table.filter(value, 'country', 'contains');
+  }
+
 }

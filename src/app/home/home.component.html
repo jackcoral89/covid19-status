@@ -1,25 +1,22 @@
 
-<p-table
-#dt
-[value]="globalCovidData"
+<p-table #dt 
+[value]="globalCovidData" 
 dataKey="countryInfo._id" 
-styleClass="p-datatable-countries"
+styleClass="p-datatable-countries" 
 [rowHover]="true" 
 [rows]="10" 
 [showCurrentPageReport]="true" 
 [rowsPerPageOptions]="[10,25,50]" 
-[loading]="loading"
+[loading]="loading" 
 [paginator]="true" 
-currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
-[globalFilterFields]="['name','country']"
->
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
 
 <ng-template pTemplate="caption">
 	<div class="table-header p-d-flex p-jc-between p-ai-center">
 		<h2>List of Countries</h2>
 		<span class="p-input-icon-left">
 			<i class="pi pi-search"></i>
-			<input pInputText type="text" (input)="dt.filterGlobal($event.target, 'contains')" placeholder="Global Search" />
+			<input pInputText type="text" (input)="filterGlobal($event)" placeholder="Global Search" />
 		</span>
 	</div>
 </ng-template>
