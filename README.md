@@ -11,4 +11,3 @@ In this project you will find an updated dashboard with the current status of **
 ## General info about this project 👀
 
 - This project uses public and free APIs to use, for more information see this link: https://github.com/disease-sh/api
-- Referral link: https://covid19-status.giacomocorallini.com
