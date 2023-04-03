@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('dt') table: Table;
+  @ViewChild('dt') table!: Table;
 
-  public globalCovidData: GlobalCovidData[];
-  public covid19All: Covid19All;
+  public globalCovidData: GlobalCovidData[] = [];
+  public covid19All: Covid19All = new Covid19All();
   public loading: boolean = true;
 
   constructor(
@@ -36,6 +36,8 @@ export class HomeComponent implements OnInit {
     this.apiService.getCovidData().subscribe((response) => {
       this.globalCovidData = response;
       this.loading = false;
+
+			console.log(this.globalCovidData)
     });
   }
 

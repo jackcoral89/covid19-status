@@ -8,7 +8,7 @@ import { MenuItem, PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent implements OnInit {
 
-  public menuItems: MenuItem[];
+  public menuItems: MenuItem[] = [];
 
   constructor(
     private primengConfig: PrimeNGConfig

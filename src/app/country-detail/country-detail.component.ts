@@ -9,7 +9,7 @@ import { ApiService } from 'src/services/api.service';
 })
 export class CountryDetailComponent implements OnInit {
 
-  public countryName: string;
+  public countryName: string = "";
 
   constructor(
     public apiService: ApiService,
@@ -18,7 +18,7 @@ export class CountryDetailComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.countryName = this.activatedRoute.snapshot.paramMap.get("country");
+    this.countryName = this.activatedRoute.snapshot.paramMap.get("country")!;
     console.log('this.countryName', this.countryName);
   }
 
